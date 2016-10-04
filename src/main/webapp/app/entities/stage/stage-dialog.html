@@ -1,0 +1,92 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myStageLabel">Create or edit a Stage</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.stage.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.stage.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_startDate">Start Date</label>
+                <div class="input-group">
+                    <input id="field_startDate" type="text" class="form-control" name="startDate" datetime-picker="{{dateformat}}" ng-model="vm.stage.startDate" is-open="vm.datePickerOpenStatus.startDate"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('startDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_endDate">End Date</label>
+                <div class="input-group">
+                    <input id="field_endDate" type="text" class="form-control" name="endDate" datetime-picker="{{dateformat}}" ng-model="vm.stage.endDate" is-open="vm.datePickerOpenStatus.endDate"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('endDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_adress">Adress</label>
+            <input type="text" class="form-control" name="adress" id="field_adress"
+                    ng-model="vm.stage.adress"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_soonEnding">Soon Ending</label>
+                <div class="input-group">
+                    <input id="field_soonEnding" type="text" class="form-control" name="soonEnding" datetime-picker="{{dateformat}}" ng-model="vm.stage.soonEnding" is-open="vm.datePickerOpenStatus.soonEnding"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('soonEnding')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_student">Student</label>
+            <input type="number" class="form-control" name="student" id="field_student"
+                    ng-model="vm.stage.student"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_compagny">Compagny</label>
+            <input type="number" class="form-control" name="compagny" id="field_compagny"
+                    ng-model="vm.stage.compagny"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label for="field_convention">Convention</label>
+            <select class="form-control" id="field_convention" name="convention" ng-model="vm.stage.convention" ng-options="convention as convention.id for convention in vm.conventions | orderBy:'id' track by convention.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_company">Company</label>
+            <select class="form-control" id="field_company" name="company" ng-model="vm.stage.company" ng-options="company as company.id for company in vm.companies track by company.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_company">Company</label>
+            <select class="form-control" id="field_company" name="company" ng-model="vm.stage.company" ng-options="company as company.id for company in vm.companies track by company.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

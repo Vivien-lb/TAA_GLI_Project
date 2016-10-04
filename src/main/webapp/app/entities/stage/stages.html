@@ -1,0 +1,78 @@
+<div>
+    <h2>Stages</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="stage.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Stage
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Start Date</span></th>
+                    <th><span>End Date</span></th>
+                    <th><span>Adress</span></th>
+                    <th><span>Soon Ending</span></th>
+                    <th><span>Student</span></th>
+                    <th><span>Compagny</span></th>
+                    <th><span>Convention</span></th>
+                    <th><span>Company</span></th>
+                    <th><span>Company</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="stage in vm.stages track by stage.id">
+                    <td><a ui-sref="stage-detail({id:stage.id})">{{stage.id}}</a></td>
+                    <td>{{stage.startDate | date:'medium'}}</td>
+                    <td>{{stage.endDate | date:'medium'}}</td>
+                    <td>{{stage.adress}}</td>
+                    <td>{{stage.soonEnding | date:'medium'}}</td>
+                    <td>{{stage.student}}</td>
+                    <td>{{stage.compagny}}</td>
+                    <td>
+                        <a ui-sref="convention-detail({id:stage.convention.id})">{{stage.convention.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="company-detail({id:stage.company.id})">{{stage.company.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="company-detail({id:stage.company.id})">{{stage.company.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="stage-detail({id:stage.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="stage.edit({id:stage.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="stage.delete({id:stage.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

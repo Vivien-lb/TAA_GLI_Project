@@ -1,0 +1,70 @@
+
+
+entity Student{
+firstName String,
+    lastName String,
+    speciality String,
+    mail String,
+    phone String,
+    adress String,
+    birthDate ZonedDateTime,
+    }
+entity Stage {
+startDate ZonedDateTime,
+    endDate ZonedDateTime,
+    adress String,
+    soonEnding ZonedDateTime,
+    student Integer,
+    compagny Integer,	
+}
+
+entity Company{
+	siret Integer,
+	name String,
+    adress String,
+    mail String,
+}
+
+entity Teacher {
+	id Integer,
+    firstName String,
+    lastName String,
+}
+
+entity Contact{
+    firstName String,
+    surname String,
+    mail String,
+    phoneNumber String,
+}
+
+entity Convention{
+    id Integer,
+    sujet String,
+    studentSignature Boolean,
+    contactSignature Boolean,
+    universitySignature Boolean,
+    salary Double,
+}
+
+relationship OneToOne {
+	Student{stage} to Stage,
+    Stage{convention} to Convention
+}
+
+relationship OneToMany {
+	Teacher{student} to Student,
+    Company{stage} to Stage,
+    Company{contact} to Contact,
+    Contact{Student} to Student
+}
+
+relationship ManyToOne {
+	Student{teacher} to Teacher,
+    Stage{company} to Company
+}
+
+relationship ManyToMany {
+	Contact{teacher} to Teacher,
+    Teacher{contact} to Contact
+}
