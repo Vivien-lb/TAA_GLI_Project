@@ -62,9 +62,6 @@ public class StageResourceIntTest {
     private static final Integer DEFAULT_STUDENT = 1;
     private static final Integer UPDATED_STUDENT = 2;
 
-    private static final Integer DEFAULT_COMPAGNY = 1;
-    private static final Integer UPDATED_COMPAGNY = 2;
-
     @Inject
     private StageRepository stageRepository;
 
@@ -103,8 +100,7 @@ public class StageResourceIntTest {
                 .endDate(DEFAULT_END_DATE)
                 .adress(DEFAULT_ADRESS)
                 .soonEnding(DEFAULT_SOON_ENDING)
-                .student(DEFAULT_STUDENT)
-                .compagny(DEFAULT_COMPAGNY);
+                .student(DEFAULT_STUDENT);
         return stage;
     }
 
@@ -134,7 +130,6 @@ public class StageResourceIntTest {
         assertThat(testStage.getAdress()).isEqualTo(DEFAULT_ADRESS);
         assertThat(testStage.getSoonEnding()).isEqualTo(DEFAULT_SOON_ENDING);
         assertThat(testStage.getStudent()).isEqualTo(DEFAULT_STUDENT);
-        assertThat(testStage.getCompagny()).isEqualTo(DEFAULT_COMPAGNY);
     }
 
     @Test
@@ -152,8 +147,7 @@ public class StageResourceIntTest {
                 .andExpect(jsonPath("$.[*].endDate").value(hasItem(DEFAULT_END_DATE_STR)))
                 .andExpect(jsonPath("$.[*].adress").value(hasItem(DEFAULT_ADRESS.toString())))
                 .andExpect(jsonPath("$.[*].soonEnding").value(hasItem(DEFAULT_SOON_ENDING_STR)))
-                .andExpect(jsonPath("$.[*].student").value(hasItem(DEFAULT_STUDENT)))
-                .andExpect(jsonPath("$.[*].compagny").value(hasItem(DEFAULT_COMPAGNY)));
+                .andExpect(jsonPath("$.[*].student").value(hasItem(DEFAULT_STUDENT)));
     }
 
     @Test
@@ -171,8 +165,7 @@ public class StageResourceIntTest {
             .andExpect(jsonPath("$.endDate").value(DEFAULT_END_DATE_STR))
             .andExpect(jsonPath("$.adress").value(DEFAULT_ADRESS.toString()))
             .andExpect(jsonPath("$.soonEnding").value(DEFAULT_SOON_ENDING_STR))
-            .andExpect(jsonPath("$.student").value(DEFAULT_STUDENT))
-            .andExpect(jsonPath("$.compagny").value(DEFAULT_COMPAGNY));
+            .andExpect(jsonPath("$.student").value(DEFAULT_STUDENT));
     }
 
     @Test
@@ -197,8 +190,7 @@ public class StageResourceIntTest {
                 .endDate(UPDATED_END_DATE)
                 .adress(UPDATED_ADRESS)
                 .soonEnding(UPDATED_SOON_ENDING)
-                .student(UPDATED_STUDENT)
-                .compagny(UPDATED_COMPAGNY);
+                .student(UPDATED_STUDENT);
 
         restStageMockMvc.perform(put("/api/stages")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -214,7 +206,6 @@ public class StageResourceIntTest {
         assertThat(testStage.getAdress()).isEqualTo(UPDATED_ADRESS);
         assertThat(testStage.getSoonEnding()).isEqualTo(UPDATED_SOON_ENDING);
         assertThat(testStage.getStudent()).isEqualTo(UPDATED_STUDENT);
-        assertThat(testStage.getCompagny()).isEqualTo(UPDATED_COMPAGNY);
     }
 
     @Test

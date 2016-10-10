@@ -37,16 +37,12 @@ public class Stage implements Serializable {
     @Column(name = "student")
     private Integer student;
 
-    @Column(name = "compagny")
-    private Integer compagny;
-
     @OneToOne
     @JoinColumn(unique = true)
     private Convention convention;
 
     @ManyToOne
     private Company company;
-
 
     public Long getId() {
         return id;
@@ -121,19 +117,6 @@ public class Stage implements Serializable {
         this.student = student;
     }
 
-    public Integer getCompagny() {
-        return compagny;
-    }
-
-    public Stage compagny(Integer compagny) {
-        this.compagny = compagny;
-        return this;
-    }
-
-    public void setCompagny(Integer compagny) {
-        this.compagny = compagny;
-    }
-
     public Convention getConvention() {
         return convention;
     }
@@ -146,7 +129,6 @@ public class Stage implements Serializable {
     public void setConvention(Convention convention) {
         this.convention = convention;
     }
-
 
     public Company getCompany() {
         return company;
@@ -190,7 +172,6 @@ public class Stage implements Serializable {
             ", adress='" + adress + "'" +
             ", soonEnding='" + soonEnding + "'" +
             ", student='" + student + "'" +
-            ", compagny='" + compagny + "'" +
             '}';
     }
 }

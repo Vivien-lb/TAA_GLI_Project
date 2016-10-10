@@ -35,13 +35,6 @@ public class Teacher implements Serializable {
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Student> students = new HashSet<>();
 
-    @ManyToMany
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    @JoinTable(name = "teacher_contact",
-               joinColumns = @JoinColumn(name="teachers_id", referencedColumnName="ID"),
-               inverseJoinColumns = @JoinColumn(name="contacts_id", referencedColumnName="ID"))
-    private Set<Contact> contacts = new HashSet<>();
-
     public Long getId() {
         return id;
     }
@@ -99,29 +92,6 @@ public class Teacher implements Serializable {
 
     public void setStudents(Set<Student> students) {
         this.students = students;
-    }
-
-    public Set<Contact> getContacts() {
-        return contacts;
-    }
-
-    public Teacher contacts(Set<Contact> contacts) {
-        this.contacts = contacts;
-        return this;
-    }
-
-    public Teacher addContact(Contact contact) {
-        contacts.add(contact);
-        return this;
-    }
-
-    public Teacher removeContact(Contact contact) {
-        contacts.remove(contact);
-        return this;
-    }
-
-    public void setContacts(Set<Contact> contacts) {
-        this.contacts = contacts;
     }
 
     @Override

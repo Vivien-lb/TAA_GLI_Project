@@ -174,7 +174,6 @@ public class Student implements Serializable {
         return this;
     }
 
- 
     public void setTeacher(Teacher teacher) {
         this.teacher = teacher;
     }

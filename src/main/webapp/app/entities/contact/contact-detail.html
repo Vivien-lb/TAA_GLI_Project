@@ -24,12 +24,6 @@
         <dd>
             <a ui-sref="company-detail({id:vm.contact.company.id})">{{vm.contact.company.id}}</a>
         </dd>
-        <dt><span>Teacher</span></dt>
-        <dd>
-            <span ng-repeat="teacher in vm.contact.teachers">
-                <a ui-sref="teacher-detail({id: teacher.id})">{{teacher.id}}</a>{{$last ? '' : ', '}}
-            </span>
-        </dd>
     </dl>
 
     <button type="submit"

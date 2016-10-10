@@ -44,10 +44,6 @@
                 <option value=""></option>
             </select>
         </div>
-        <div class="form-group">
-            <label for="field_teacher">Teacher</label>
-            <select class="form-control" id="field_teacher" multiple name="teacher" ng-model="vm.contact.teachers" ng-options="teacher as teacher.id for teacher in vm.teachers track by teacher.id"></select>
-        </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">

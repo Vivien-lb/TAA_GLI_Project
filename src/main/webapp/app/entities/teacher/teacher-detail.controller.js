@@ -5,9 +5,9 @@
         .module('tryApp')
         .controller('TeacherDetailController', TeacherDetailController);
 
-    TeacherDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Teacher', 'Student', 'Contact'];
+    TeacherDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Teacher', 'Student'];
 
-    function TeacherDetailController($scope, $rootScope, $stateParams, previousState, entity, Teacher, Student, Contact) {
+    function TeacherDetailController($scope, $rootScope, $stateParams, previousState, entity, Teacher, Student) {
         var vm = this;
 
         vm.teacher = entity;

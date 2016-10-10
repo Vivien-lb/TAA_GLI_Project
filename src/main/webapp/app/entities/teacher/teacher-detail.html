@@ -12,12 +12,6 @@
         <dd>
             <span>{{vm.teacher.lastName}}</span>
         </dd>
-        <dt><span>Contact</span></dt>
-        <dd>
-            <span ng-repeat="contact in vm.teacher.contacts">
-                <a ui-sref="contact-detail({id: contact.id})">{{contact.id}}</a>{{$last ? '' : ', '}}
-            </span>
-        </dd>
     </dl>
 
     <button type="submit"

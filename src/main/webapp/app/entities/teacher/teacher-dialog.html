@@ -26,10 +26,6 @@
                      />
         </div>
 
-        <div class="form-group">
-            <label for="field_contact">Contact</label>
-            <select class="form-control" id="field_contact" multiple name="contact" ng-model="vm.teacher.contacts" ng-options="contact as contact.id for contact in vm.contacts track by contact.id"></select>
-        </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">

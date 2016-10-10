@@ -24,7 +24,6 @@
                     <th><span>Mail</span></th>
                     <th><span>Phone Number</span></th>
                     <th><span>Company</span></th>
-                    <th><span>Teacher</span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -37,11 +36,6 @@
                     <td>{{contact.phoneNumber}}</td>
                     <td>
                         <a ui-sref="company-detail({id:contact.company.id})">{{contact.company.id}}</a>
-                    </td>
-                    <td>
-                        <span ng-repeat="teacher in contact.teachers">
-                            <a class="form-control-static" ui-sref="teacher-detail({id: teacher.id})">{{teacher.id}}</a>{{$last ? '' : ', '}}
-                        </span>
                     </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">

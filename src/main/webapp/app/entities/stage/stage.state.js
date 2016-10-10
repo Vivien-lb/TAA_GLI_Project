@@ -100,7 +100,6 @@
                                 adress: null,
                                 soonEnding: null,
                                 student: null,
-                                compagny: null,
                                 id: null
                             };
                         }

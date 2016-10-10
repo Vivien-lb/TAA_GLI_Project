@@ -88,7 +88,7 @@ public class ContactResource {
     @Timed
     public List<Contact> getAllContacts() {
         log.debug("REST request to get all Contacts");
-        List<Contact> contacts = contactRepository.findAllWithEagerRelationships();
+        List<Contact> contacts = contactRepository.findAll();
         return contacts;
     }
 
@@ -104,7 +104,7 @@ public class ContactResource {
     @Timed
     public ResponseEntity<Contact> getContact(@PathVariable Long id) {
         log.debug("REST request to get Contact : {}", id);
-        Contact contact = contactRepository.findOneWithEagerRelationships(id);
+        Contact contact = contactRepository.findOne(id);
         return Optional.ofNullable(contact)
             .map(result -> new ResponseEntity<>(
                 result,

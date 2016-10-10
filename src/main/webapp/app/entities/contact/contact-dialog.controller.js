@@ -5,9 +5,9 @@
         .module('tryApp')
         .controller('ContactDialogController', ContactDialogController);
 
-    ContactDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Contact', 'Company', 'Student', 'Teacher'];
+    ContactDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Contact', 'Company', 'Student'];
 
-    function ContactDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Contact, Company, Student, Teacher) {
+    function ContactDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Contact, Company, Student) {
         var vm = this;
 
         vm.contact = entity;
@@ -15,7 +15,6 @@
         vm.save = save;
         vm.companies = Company.query();
         vm.students = Student.query();
-        vm.teachers = Teacher.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

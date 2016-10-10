@@ -5,9 +5,9 @@
         .module('tryApp')
         .controller('ContactDetailController', ContactDetailController);
 
-    ContactDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Contact', 'Company', 'Student', 'Teacher'];
+    ContactDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Contact', 'Company', 'Student'];
 
-    function ContactDetailController($scope, $rootScope, $stateParams, previousState, entity, Contact, Company, Student, Teacher) {
+    function ContactDetailController($scope, $rootScope, $stateParams, previousState, entity, Contact, Company, Student) {
         var vm = this;
 
         vm.contact = entity;

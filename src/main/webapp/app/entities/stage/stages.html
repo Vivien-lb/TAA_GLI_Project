@@ -24,9 +24,7 @@
                     <th><span>Adress</span></th>
                     <th><span>Soon Ending</span></th>
                     <th><span>Student</span></th>
-                    <th><span>Compagny</span></th>
                     <th><span>Convention</span></th>
-                    <th><span>Company</span></th>
                     <th><span>Company</span></th>
                     <th></th>
                 </tr>
@@ -39,12 +37,8 @@
                     <td>{{stage.adress}}</td>
                     <td>{{stage.soonEnding | date:'medium'}}</td>
                     <td>{{stage.student}}</td>
-                    <td>{{stage.compagny}}</td>
                     <td>
                         <a ui-sref="convention-detail({id:stage.convention.id})">{{stage.convention.id}}</a>
-                    </td>
-                    <td>
-                        <a ui-sref="company-detail({id:stage.company.id})">{{stage.company.id}}</a>
                     </td>
                     <td>
                         <a ui-sref="company-detail({id:stage.company.id})">{{stage.company.id}}</a>

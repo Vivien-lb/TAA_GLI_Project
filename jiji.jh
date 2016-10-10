@@ -15,7 +15,6 @@ startDate ZonedDateTime,
     adress String,
     soonEnding ZonedDateTime,
     student Integer,
-    compagny Integer,	
 }
 
 entity Company{
@@ -26,7 +25,6 @@ entity Company{
 }
 
 entity Teacher {
-	id Integer,
     firstName String,
     lastName String,
 }
@@ -39,7 +37,6 @@ entity Contact{
 }
 
 entity Convention{
-    id Integer,
     sujet String,
     studentSignature Boolean,
     contactSignature Boolean,
@@ -57,14 +54,4 @@ relationship OneToMany {
     Company{stage} to Stage,
     Company{contact} to Contact,
     Contact{Student} to Student
-}
-
-relationship ManyToOne {
-	Student{teacher} to Teacher,
-    Stage{company} to Company
-}
-
-relationship ManyToMany {
-	Contact{teacher} to Teacher,
-    Teacher{contact} to Contact
 }

@@ -88,7 +88,7 @@ public class TeacherResource {
     @Timed
     public List<Teacher> getAllTeachers() {
         log.debug("REST request to get all Teachers");
-        List<Teacher> teachers = teacherRepository.findAllWithEagerRelationships();
+        List<Teacher> teachers = teacherRepository.findAll();
         return teachers;
     }
 
@@ -104,7 +104,7 @@ public class TeacherResource {
     @Timed
     public ResponseEntity<Teacher> getTeacher(@PathVariable Long id) {
         log.debug("REST request to get Teacher : {}", id);
-        Teacher teacher = teacherRepository.findOneWithEagerRelationships(id);
+        Teacher teacher = teacherRepository.findOne(id);
         return Optional.ofNullable(teacher)
             .map(result -> new ResponseEntity<>(
                 result,
