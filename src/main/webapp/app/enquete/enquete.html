@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enquête ancien stagiaire</title>
+</head>
+<body>
+<h1>Enquête ancien stagiaire</h1>
+
+<form method="get" enctype="application/x-www-form-urlencoded" action="/html/codes/html_form_handler.cfm">
+
+    <p>
+        <label>Nom de la société d'acceuil durant le stage
+            <input type="text" name="company_name" required>
+        </label>
+    </p>
+
+    <p>
+        <label>Numéro personnel
+            <input type="tel" name="phone_number">
+        </label>
+    </p>
+
+    <p>
+        <label>Email personnel
+            <input type="email" name="email_address">
+        </label>
+    </p>
+
+    <fieldset>
+        <legend>Êtes-vous resté dans la société à la fin du stage ? </legend>
+        <p><label> <input type="radio" name="taxi" required value="oui"> Oui </label></p>
+        <p><label> <input type="radio" name="taxi" required value="non"> Non </label></p>
+    </fieldset>
+
+
+    <p class="span6">
+        <label>Rémunération durant le stage
+            <input type="text" name="pay" required> euros
+        </label>
+    </p>
+
+    <p class="span6">
+        <label>Rémunération après le stage
+            <input type="text" name="pay" > euros (optionnel)
+        </label>
+    </p>
+
+
+    <p>
+        <label>Ce que cela vous à apporté:
+            <textarea name="comments" maxlength="500"></textarea>
+        </label>
+    </p>
+
+    <p><button>Enquête terminée</button></p>
+
+</form>
+</body>
+</html>

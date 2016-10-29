@@ -1,0 +1,32 @@
+<div ng-app="myApp" ng-controller="MailController">
+
+    <div class="table-responsive">
+        <button ng-click="findCompanies()">Companies</button>
+        <table ng-show="visibleCompany">
+            <tr  ng-repeat="company in companies">
+                <td>{{company.mail}}</td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div class="table-responsive">
+        <button ng-click="visibleTeacher">Teachers</button>
+        <table ng-show="visibleTeacher">
+            <tr ng-repeat="teacher in teachers">
+                <td>{{teacher.firstName}}</td>
+            </tr>
+        </table>
+    </div>
+
+
+    <select ng-model="" ng-options="x.firstName for x in findCompany">
+    </select>
+
+
+</div>
+
+
+
+
+
